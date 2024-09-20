@@ -46,7 +46,6 @@
 - iDMED_REL_034_Utentes_Registrados_iDMED_v.1.0
 
 
-# iDMED (v1.4.0)
 ## Installation
 
 Primeiro instale o docker [Docker](https://docs.docker.com/get-started/.).
