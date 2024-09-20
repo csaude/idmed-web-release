@@ -7,9 +7,9 @@
 #### Relatórios de Stock
 - Balancete Diário (Novo)
 #### Relatórios de Gestão de Farmácia
-- Utentes Abandono - Ticket #3596 (Novo)
-- MMIA - Actualização do MMIA para contabilização de utentes em PrEP - Ticket #3582 (Actualização)
-- MMIA - Ajustes Negativos e Perdas - Ticket #3724
+- Utentes Abandono - **Ticket #3596 (Novo)**
+- MMIA - Actualização do MMIA para contabilização de utentes em PrEP - **Ticket #3582 (Actualização)**
+- MMIA - Ajustes Negativos e Perdas - **Ticket #3724**
 - Utentes que Abandonaram e Retornaram (Novo)
 - Segundas Linhas Terapêuticas (Novo)
 - Linhas Terapêuticas Usadas (Novo)
