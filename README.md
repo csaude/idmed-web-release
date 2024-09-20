@@ -1,5 +1,7 @@
 # iDMED (v1.4.0)
 
+## _Notas da release_
+
 ## Relatórios 
 
 ### Relatórios do serviço de Saúde TARV
