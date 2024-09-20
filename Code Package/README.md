@@ -1,7 +1,8 @@
-# iDMED Mobile (v1.4.0)
+# iDMED (v1.4.0)
 ## Installation
 
-Promeiro instale o docker [Docker](https://docs.docker.com/get-started/.).
+Primeiro instale o docker [Docker](https://docs.docker.com/get-started/.).
+Localize o arquivo .zip de instalação fornecidos no pacote desta release no [sharedrive]( https://drive.google.com/drive/folders/1moEGeZISjc7xRH80TLxYwWhbtIVD9-Yv) na pasta Code Package
 Copia o arquivo 'csaude-idmed-current_Instalation.zip' para o DIRECTORIO idmedSetup e execute os comandos
 
 ```sh
