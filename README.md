@@ -47,7 +47,6 @@
 - iDMED_REL_033_Linhas_Terapeuticas_Usadas_v.1.0
 - iDMED_REL_034_Utentes_Registrados_iDMED_v.1.0
 
-# iDMED (v1.4.0)
 
 ## Installation
 
@@ -191,6 +190,14 @@ Se o resultado obtido for ***Bad***, execute o comando a seguir para identificar
 root@:/# tail -f /var/log/bucardo/log.bucardo
 ```
 
+### 7. Inicialização do Serviço de Replica Lógica
+Usando a linha de comando, execute o comando abaixo para acessar o serviço de banco de dados dentro do contêiner Docker ou um cliente de banco de dados PostgreSQL do seu domínio para executar os comandos
+```sh
+postgres# CREATE SUBSCRIPTION sub_us_id CONNECTION 'host=[add_host] dbname=[add_provincial_db] user=postgres port=[add_port] password=[notpass] sslmode=allow' PUBLICATION pub_us_id WITH (copy_data = false);
+```
+```sh
+$ docker-compose logs -f
+# Verifique se a informação de inicio de criação de WAL foi iniciada com sucesso.
+```
 ## License
 CSAUDE
-
