@@ -180,6 +180,7 @@ Após a execução do comando, você deverá obter o seguinte resultado:
 | ---- | ------ | ------ | ------ | ------ | ------ | ------ |
 | idmed_sync | Good | 16:14:50 | 46m 53s | 9/9  | none |  |
 
+ou
 
 | Name | README | README | README | README | README | README |
 | ---- | ------ | ------ | ------ | ------ | ------ | ------ |
