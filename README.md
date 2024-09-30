@@ -47,7 +47,7 @@
 - iDMED_REL_033_Linhas_Terapeuticas_Usadas_v.1.0
 - iDMED_REL_034_Utentes_Registrados_iDMED_v.1.0
 
-
+# iDMED (v1.4.0)
 
 ## Installation
 
@@ -127,13 +127,13 @@ docker exec -it csaude-idmed-current_db_1 /bin/bash
 ```
 Nota: Pode utilizar um cliente de banco de dados PostgreSQL do seu domínio para executar os comandos
 
-### Efectue o backup da base de dados do iDMED
+### 1. Efectue o backup da base de dados do iDMED
 ```sh
 postgres#  pg_dump --file "backupIdmedDB_1.4.0.backup" --host "localhost" --port "9876" --username "postgres" --no-password --format=c --blobs --data-only  --inserts --column-inserts --verbose "idmed";
 ```
 Baixe o arquivo **schemaProvincialServer01-v15.sql** com o novo esquema da base de dados do iDMED através deste [Link](https://drive.google.com/file/d/1sVKRaRVNOsedcLnhHTCpxZxpISCmBZG6/view?usp=drive_link)
 
-### Efectue o restore a nova base de dados
+### 2. Efectue o restore a nova base de dados
 ```sh
 postgres# DROP DATABSE idmed;
 postgres# CREATE DATABASE idmed;
@@ -143,13 +143,13 @@ postgres# pg_restore --host "localhost" --port "9876" --username "postgres" --no
 postgres# pg_restore --host "localhost" --port "9876" --username "postgres" --no-password --dbname "idmed" --verbose "backupIdmedDB_1.4.0.backup";
 ```
 
-### Execução do Serviço iDMED
+### 3. Execução do Serviço iDMED
 ```sh
 $ docker-compose down && docker-compose up -d frontendserver && docker-compose logs -f
 # Verifique se o iDMED esta em execução
 ```
 
-### Inicialização do Serviço bucardo
+### 4. Inicialização do Serviço bucardo
 ```sh
 $ docker-compose up -d bucardo && docker-compose logs -f
 # Verifique se o bucardo esta em execução
@@ -160,12 +160,12 @@ postgres# UPDATE bucardo.db SET dbhost=[add_host], dbport=[add_port], dbname=[ad
 postgres# SELECT * from bucardo.db WHERE name = 'idmedCentral';
 # Verifique a altetação na base de dados
 ```
-### Reinicie o Serviço bucardo
+### 5. Reinicie o Serviço bucardo
 ```sh
 $ docker-compose restart bucardo && docker-compose logs -f
 # Verifique se o bucardo esta em execução
 ``` 
-### Verificação do estado do serviço bucardo
+### 6. Verificação do estado do serviço bucardo
 Usando a linha de comando, execute o comando abaixo para acessar o serviço de banco de dados dentro do contêiner Docker:
 
 ```sh
@@ -192,3 +192,4 @@ root@:/# tail -f /var/log/bucardo/log.bucardo
 
 ## License
 CSAUDE
+
