@@ -89,7 +89,7 @@ SOURCE_DB_USER=[idmedUserDB]
 SOURCE_DB_PASS=[idmedPASSDB]
 ```
 
-Para uma nova instalação
+# Para uma nova instalação
 
 ```sh
 $ docker-compose --env-file .env up -d db && docker-compose logs -f
@@ -118,7 +118,7 @@ http://[localhost/COLOCAR_IP]:5000
 ```
 Select the Health Facility
 
-Para uma actualização
+# Para uma actualização
 
 ## Preparação e Execução da actualização
 Primeiro, precisamos garantir que o serviço de base de dados seja o unico em execução.
