@@ -11,15 +11,32 @@ $ unzip idmed-images.tar.xz
 $ docker load -i idmed-images.tar
 ```
 
-# Update the file .env with the provided information.
+## Update the file .env with the provided information.
 
-# BUCARDO TARGET CONF
 ```sh
-TARGET_DB_NAME=[provincial_idmed_db]
-TARGET_DB_USER=[provincial_idmed_db_user]
-TARGET_DB_PASS=[provincial_idmed_db_pass]
-TARGET_DB_PORT=[provincial_idmed_db_port]
-TARGET_DB_HOST=[provincial_idmed_db_host]
+### DB AND BACKUP SERVICE
+POSTGRES_HOST=[dbHost]
+POSTGRES_DB=[idmedDB]
+POSTGRES_USER=[idmedUserDB]
+POSTGRES_PASSWORD=[idmedPASSDB]
+POSTGRES_EXTRA_OPTS="-Z6 --schema=public --blobs"
+SCHEDULE=@weekly
+BACKUP_KEEP_DAYS=3
+BACKUP_KEEP_WEEKS=2
+BACKUP_KEEP_MONTHS=1
+HEALTHCHECK_PORT=8989
+
+### BUCARDO TARGET CONF
+TARGET_DB_NAME=[ProvincialDBName]
+TARGET_DB_USER=[ProvincialDBUser]
+TARGET_DB_PASS=[ProvincialDBPASS]
+TARGET_DB_PORT=[ProvincialDBPORT]
+TARGET_DB_HOST=[ProvincialDBHOST]
+
+### BUCARDO SOURCE CONF
+SOURCE_DB_NAME=[idmedDB]
+SOURCE_DB_USER=[idmedUserDB]
+SOURCE_DB_PASS=[idmedPASSDB]
 ```
 Para uma nova instalação
 
