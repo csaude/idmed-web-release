@@ -6,6 +6,7 @@
 
 #### Relatórios de Gestão de Farmácia
 - Faltosos ao levantamento de ARVs para APSS - **Ticket #3655**
+
 #### Relatórios de Monitoria e Avaliação
 - Dispensas Não Sincronizadas para o OpenMRS - **Ticket #3713**
 
