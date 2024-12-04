@@ -1,10 +1,8 @@
-# iDMED Mobile (v1.5.0)
-
+# iDMED Mobile (v1.5.0 SNAPSHOT)
 ## Installation
 
 Primeiro instale o docker [Docker](https://docs.docker.com/get-started/.).
 Localize o arquivo .zip de instalação fornecidos no pacote desta release no [gitHub]() na pasta Code Package
-
 Copia o arquivo 'csaude-idmed-current_Instalation.zip' para o DIRECTORIO idmedSetup e execute os comandos
 
 ```sh
@@ -40,72 +38,141 @@ SOURCE_DB_NAME=[idmedDB]
 SOURCE_DB_USER=[idmedUserDB]
 SOURCE_DB_PASS=[idmedPASSDB]
 ```
+
+### Offline
+```sh
+$ unzip csaude-idmed_current_Instalation.zip
+$ unzip idmed-images.tar.xz
+$ docker load -i idmed-images.tar
+```
+
+ou
+
+### Online
+```sh
+$ unzip csaude-idmed_current_Instalation.zip
+```
+
 Para uma nova instalação
 
 ```sh
 $ docker-compose --env-file .env up -d db && docker-compose logs -f
-# check whether logs show the message "PostgreSQL init process complete; ready for start up."
+# Verifique se a mensagem a seguir é ilustrada "PostgreSQL init process complete; ready for start up."
 
-$ docker-compose --env-file .env run --rm initscript
-# check whether logs show the message "PostgreSQL init process complete; ready for start up."
+$ $ docker-compose--env-file .env run --rm initscript
+# Verifique se a mensagem a seguir é ilustrada "DATABASE CREATED." ou "DATABASES ALREADY EXISTS "
 
 $ docker-compose --env-file .env run --rm initializationscript
-# check whether logs show the message "PostgreSQL init process complete; ready for start up."
-
 $ docker-compose --env-file .env down && docker-compose up -d frontendserver && docker-compose logs -f
-# check whether iDMED is up running
+# Verifique se o iDMED esta em execução
 
 $ docker-compose --env-file .env run --rm updatescript
-
 $ docker-compose --env-file .env run --rm initbucardoscript
-# check whether bucardo db and schema are created
+# Verifique se a base de dados e schema "bucardo" foram criados
 
-# # Update the file csaude-idmed-current/app/.env with the provided information.
 $ docker-compose --env-file .env up -d bucardo && docker-compose logs -f
+# Verifique se a sincronizacao com "bucardo" esta em execução
 
 $ docker-compose down && docker-compose --env-file .env up -d frontendserver bucardo && docker-compose logs -f
-# check whether iDMED is up running
+# Verifique se o iDMED esta em execução
 ```
+Abra o seu navegador, e a aplicação estará em execução em:
+```sh
+http://[localhost/COLOCAR_IP]:5000
+```
+Select the Health Facility
 
 Para uma actualização
+
+## Preparação e Execução da actualização
+Primeiro, precisamos garantir que o serviço de base de dados seja o unico em execução.
+
+Usando a linha de comando, execute o comando abaixo:
+
 ```sh
-# Create backup database
+$ docker-compose down && docker-compose --env-file .env up -d db && docker-compose logs -f
+# Verifique se a mensagem a seguir é ilustrada "PostgreSQL init process complete; ready for start up."
+```
+
+### 1. Efectue o backup da base de dados do iDMED
+```sh
+
 $ docker-compose --env-file .env run --rm initbackupdatabasescript
+# Cria uma base de dados "idmedbackup" para o backup da versao 1.4.0
 
-# Configure the backup database and run the backup
 $ docker-compose --env-file .env run --rm backupscript
+# Verifique se o backup esta em execução
+```
 
-# Run restorescript
+### 2. Efectue o restore a nova base de dados
+```sh
 $ docker-compose --env-file .env run --rm restorescript
+# Verifique se o Restore esta em execução para a base de dados idmedbackup
 
-# Rename the databases
 $ docker-compose --env-file .env run --rm renamedatabasescript
+# Verifique a existencia das bases de dados "idmed_backup_1_4_0" e "idmed"
+```
 
-# Update the database idmed to version 1.5.0
+### 3. Execução do Serviço iDMED
+```sh
 $ docker-compose down && docker-compose --env-file .env up -d backendserver && docker-compose logs -f
+# Verifique se os containers estão em execução
+# Verifique se a mensagem a seguir é ilustrada  "Grails application running at http://localhost:8884 in environment: production"
+
 $ docker-compose run --rm updatescript
+# Actualização da database idmed to para a versão 1.5.0
+```
 
-# As root update file /pgmaster-data/postgresql.conf WITH
-# ..
-# wal_level = logical
-# max_replication_slots = 100
-# ..
-
-$ docker-compose --env-file .env run --rm  initlogicalreplicationscript
-# check whether a postgres subsription is created
-
+### 4. Inicialização do Serviço bucardo
+```sh
 $ docker-compose --env-file .env run --rm initbucardoscript
-# check whether bucardo db and schema are created
+# Verifique se a base de dados com "bucardo" esta em execução
 
-$ docker-compose down && docker-compose --env-file .env up -d frontendserver bucardo && docker-compose logs -f
-# check whether iDMED is up running
+$ docker-compose down && docker-compose --env-file .env up -d bucardo && docker-compose logs -f
+# Verifique se a sincronizacao com "bucardo" esta em execução
+```
+
+### 5. Verificação do estado do serviço bucardo
+Usando a linha de comando, execute o comando abaixo para acessar o serviço de banco de dados dentro do contêiner Docker:
+
+```sh
+docker exec -it idmed-bucardo-1 /bin/bash
+```
+Dentro do contêiner, execute o seguinte comando:
+```sh
+root@:/# bucardo -h db -U bucardo status
+```
+Após a execução do comando, deverá obter o seguinte resultado:
+| Name | README | README | README | README | README | README |
+| ---- | ------ | ------ | ------ | ------ | ------ | ------ |
+| idmed_sync | Good | 16:14:50 | 46m 53s | 9/9  | none |  |
+
+ou
+
+| Name | README | README | README | README | README | README |
+| ---- | ------ | ------ | ------ | ------ | ------ | ------ |
+| idmed_sync | Bad | 16:14:50 | 46m 53s | 9/9  | none |  |
+
+Se o resultado obtido for ***Bad***, execute o comando a seguir para identificar o erro e contacte o helpdesk para suporte:
+```sh
+root@:/# tail -f /var/log/bucardo/log.bucardo
+```
+
+### 6. Inicialização do Serviço de Replica Lógica
+Usando a linha de comando, execute o comando abaixo para a criação de uma subscricão para a base de dados:
+```sh
+$ docker-compose --env-file .env run --rm  initlogicalreplicationscript
+# Verifique se a informação de subscricao foi criado
+```
+
+```sh
+$ docker-compose logs -f
+# Verifique se a informação de inicio de criação de WAL foi iniciada com sucesso.
 ```
 
 Go to the Browser your aplication is running at
 ```sh
 http://[localhost/COLOCAR_IP]:5000
 ```
-Select the Health Facility
-
 ## License
 CSAUDE
