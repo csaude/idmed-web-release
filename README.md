@@ -61,7 +61,7 @@ ou
 $ unzip csaude-idmed_current_Instalation.zip
 ```
 
-## Update the file .env with the provided information.
+## Actualize o ficheiro .env com a informação de aceeso partilhada. Caso nao teha recebido, por favor solicite a equipa da CSAUDE.
 
 ```sh
 ### DB AND BACKUP SERVICE
@@ -87,6 +87,11 @@ TARGET_DB_HOST=[ProvincialDBHOST]
 SOURCE_DB_NAME=[idmedDB]
 SOURCE_DB_USER=[idmedUserDB]
 SOURCE_DB_PASS=[idmedPASSDB]
+
+# BACKEND
+DB_USER=[idmedUserDB]
+DB_PASS=[idmedPASSDB]
+DB_URL=jdbc:postgresql://db:5432/idmed
 ```
 
 # Para uma nova instalação
@@ -95,7 +100,7 @@ SOURCE_DB_PASS=[idmedPASSDB]
 $ docker-compose --env-file .env up -d db && docker-compose logs -f
 # Verifique se a mensagem a seguir é ilustrada "PostgreSQL init process complete; ready for start up."
 
-$ $ docker-compose--env-file .env run --rm initscript
+$ docker-compose--env-file .env run --rm initscript
 # Verifique se a mensagem a seguir é ilustrada "DATABASE CREATED." ou "DATABASES ALREADY EXISTS "
 
 $ docker-compose --env-file .env run --rm initializationscript
@@ -164,7 +169,7 @@ $ docker-compose run --rm updatescript
 $ docker-compose --env-file .env run --rm initbucardoscript
 # Verifique se a base de dados com "bucardo" esta em execução
 
-$ docker-compose down && docker-compose --env-file .env up -d bucardo && docker-compose logs -f
+$ docker-compose down && docker-compose --env-file .env up -d frontendserver bucardo && docker-compose logs -f
 # Verifique se a sincronizacao com "bucardo" esta em execução
 ```
 
@@ -206,7 +211,7 @@ $ docker-compose logs -f
 # Verifique se a informação de inicio de criação de WAL foi iniciada com sucesso.
 ```
 
-Go to the Browser your aplication is running at
+Go to the Browser your application is running at
 ```sh
 http://[localhost/COLOCAR_IP]:5000
 ```
