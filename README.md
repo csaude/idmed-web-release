@@ -1,48 +1,40 @@
-# iDMED (v1.4.0)
+# iDMED (v1.5.0)
 
-## Relatórios 
+## Relatórios
 
 ### Relatórios do serviço de Saúde TARV
 
-#### Relatórios de Stock
-- Balancete Diário (Novo)
 #### Relatórios de Gestão de Farmácia
-- Utentes Abandono - Ticket #3596 (Novo)
-- MMIA - Actualização do MMIA para contabilização de utentes em PrEP - Ticket #3582 (Actualização)
-- MMIA - Ajustes Negativos e Perdas - Ticket #3724
-- Utentes que Abandonaram e Retornaram (Novo)
-- Segundas Linhas Terapêuticas (Novo)
-- Linhas Terapêuticas Usadas (Novo)
+- Faltosos ao levantamento de ARVs para APSS - **Ticket #3655**
 #### Relatórios de Monitoria e Avaliação
-- Utentes Registados a partir do iDMED (Novo)
+- Dispensas Não Sincronizadas para o OpenMRS - **Ticket #3713**
 
 
 ## Funcionalidades e Formulários
 
 ####  Módulo de Gestão de Utentes
-- Registro de Prescrição e Dispensa - **Ticket #3723 (Actualização)**
+- Alerta ao criar prescrição para pacientes - **Ticket #3656 (Novo)**
+- Dispensa de Medicamentos a pacientes inativos - **Ticket #3437 (Novo)**
+- Atribuição automática de Location UUID - **Ticket #3677 (Novo)**
+- Sincronização de Dados de Utentes do OpenMRS para iDMED (Novo)
 
-## Correcções de Erros
+#### Módulo de Gestão de Stock
+- Distribuição de Stock (Novo)
 
-#### Módulo de Gestão de Utentes
-- Erro durante o processo de união de Utentes - **Ticket #3646**
-- Lentidão ao Abrir Painel de Utentes- **Ticket #3633**
-- Lentidão ao Dispensar Medicamentos - **Ticket #3653**
-#### Módulo de Relatórios:
-- Histórico de Levantamento de Utentes Referidos - **Ticket #3609**
-- MMIA - Inconsistência de dados - **Ticket #3582**
-- MMIA - Dispensas CCR não reflectem no MMIA - **Ticket #3598**
+#### Módulo de Administração Geral:
+- Constrangimento no acesso aos sectores clínicos - **Ticket #3777**
+- Configuração de Sector Clínico - **Ticket #3774**
+- Update do parent_clinic_id - **Ticket #3804**
+
 
 ## Documentos
 
 #### Notas da Release:
-- iDMED - Release Notes_Sept_2024_PT
+- iDMED - 1.5.0 Release Notes_Dec_2024
+
 #### Documentos de Requisitos iDMED_Web:
-- iDMED_REL_029_Balancete_Diário_v.1.0
-- iDMED_REL_030_Utentes_Abandono_v.1.0
-- iDMED_REL_031_Utentes_Abandonaram_retornaram_v.1.0
-- iDMED_REL_032_Utentes_Segunda_Linha_v.1.0
-- iDMED_REL_033_Linhas_Terapeuticas_Usadas_v.1.0
-- iDMED_REL_034_Utentes_Registrados_iDMED_v.1.0
-
-
+- iDMED_STK_005_Distribuição
+- iDMED_PAT_004_Registo_Manutenção_Prescrições
+- iDMED_REL_035_Dispensas_Não_Sincronizadas
+- iDMED_REL_015_Faltosos_Levantamento_ARVs_APSS
+- iDMED_Mobile_STK_FUNC_002_Distribuição_Stock
