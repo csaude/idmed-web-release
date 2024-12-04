@@ -47,10 +47,18 @@ Primeiro instale o docker [Docker](https://docs.docker.com/get-started/.).
 Localize o arquivo .zip de instalação fornecidos no pacote desta release no [gitHub]() na pasta Code Package
 Copia o arquivo 'csaude-idmed-current_Instalation.zip' para o DIRECTORIO idmedSetup e execute os comandos
 
+### Offline
 ```sh
 $ unzip csaude-idmed_current_Instalation.zip
 $ unzip idmed-images.tar.xz
 $ docker load -i idmed-images.tar
+```
+
+ou
+
+### Online
+```sh
+$ unzip csaude-idmed_current_Instalation.zip
 ```
 
 ## Update the file .env with the provided information.
@@ -79,20 +87,6 @@ TARGET_DB_HOST=[ProvincialDBHOST]
 SOURCE_DB_NAME=[idmedDB]
 SOURCE_DB_USER=[idmedUserDB]
 SOURCE_DB_PASS=[idmedPASSDB]
-```
-
-### Offline
-```sh
-$ unzip csaude-idmed_current_Instalation.zip
-$ unzip idmed-images.tar.xz
-$ docker load -i idmed-images.tar
-```
-
-ou
-
-### Online
-```sh
-$ unzip csaude-idmed_current_Instalation.zip
 ```
 
 Para uma nova instalação
