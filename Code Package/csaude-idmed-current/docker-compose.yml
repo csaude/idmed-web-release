@@ -126,6 +126,9 @@ services:
        - db
     environment:
        DATABASE_HOST: db
+       DB_USER: ${DB_USER}
+       DB_PASS: ${DB_PASS}
+       DB_URL: ${DB_URL}
     depends_on:
        - db
     restart: always
