@@ -1,4 +1,4 @@
-# iDMED Mobile (v1.5.0)
+# iDMED Mobile (v1.5.0 SNAPSHOT)
 ## Installation
 
 Primeiro instale o docker [Docker](https://docs.docker.com/get-started/.).
