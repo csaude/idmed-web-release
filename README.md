@@ -203,7 +203,7 @@ root@:/# tail -f /var/log/bucardo/log.bucardo
 Usando a linha de comando, execute o comando abaixo para a criação de uma subscricão para a base de dados:
 ```sh
 $ docker-compose --env-file .env run --rm  initlogicalreplicationscript
-# Verifique se a informação de subscricao foi criado
+# Verifique se a informação de subscrição foi criada
 ```
 
 ```sh
