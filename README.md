@@ -1,4 +1,4 @@
-# iDMED (v1.5.0 SNAPSHOT)
+# iDMED (v1.5.0)
 
 ## Relatórios
 
@@ -13,12 +13,6 @@
 
 ## Funcionalidades e Formulários
 
-####  Módulo de Gestão de Utentes
-- Alerta ao criar prescrição para pacientes - **Ticket #3656 (Novo)**
-- Dispensa de Medicamentos a pacientes inativos - **Ticket #3437 (Novo)**
-- Atribuição automática de Location UUID - **Ticket #3677 (Novo)**
-- Sincronização de Dados de Utentes do OpenMRS para iDMED (Novo)
-
 #### Módulo de Gestão de Stock
 - Distribuição de Stock (Novo)
 
@@ -26,6 +20,7 @@
 - Constrangimento no acesso aos sectores clínicos - **Ticket #3777**
 - Configuração de Sector Clínico - **Ticket #3774**
 - Update do parent_clinic_id - **Ticket #3804**
+- Atribuição automática de Location UUID - **Ticket #3677 (Novo)**
 
 
 ## Documentos
@@ -41,7 +36,7 @@
 - iDMED_Mobile_STK_FUNC_002_Distribuição_Stock
 
 
-## Installation
+## Instalação
 
 Primeiro instale o docker [Docker](https://docs.docker.com/get-started/.). Garantir que a versão do Docker Compose seja maior que v1.25.0.
 Localize o arquivo .zip de instalação fornecidos no pacote desta release no [gitHub]() na pasta Code Package
@@ -61,7 +56,7 @@ ou
 $ unzip csaude-idmed_current_Instalation.zip
 ```
 
-## Actualize o ficheiro .env com a informação de aceeso partilhada. Caso nao teha recebido, por favor solicite a equipa da CSAUDE.
+## Actualize o ficheiro .env com a informação de acesso partilhada. Caso nao teha recebido, por favor solicite a equipa da CSAUDE.
 
 ```sh
 ### DB AND BACKUP SERVICE
@@ -100,7 +95,7 @@ DB_URL=jdbc:postgresql://db:5432/idmed
 $ docker-compose --env-file .env up -d db && docker-compose logs -f
 # Verifique se a mensagem a seguir é ilustrada "PostgreSQL init process complete; ready for start up."
 
-$ docker-compose--env-file .env run --rm initscript
+$ docker-compose --env-file .env run --rm initscript
 # Verifique se a mensagem a seguir é ilustrada "DATABASE CREATED." ou "DATABASES ALREADY EXISTS "
 
 $ docker-compose --env-file .env run --rm initializationscript
@@ -162,6 +157,9 @@ $ docker-compose down && docker-compose --env-file .env up -d backendserver && d
 
 $ docker-compose run --rm updatescript
 # Actualização da database idmed to para a versão 1.5.0
+
+$ docker-compose down && docker-compose --env-file .env up -d frontendserver && docker-compose logs -f
+# Verifique se o serviço "iDMED" esta em execução
 ```
 
 ### 4. Inicialização do Serviço bucardo
@@ -169,8 +167,9 @@ $ docker-compose run --rm updatescript
 $ docker-compose --env-file .env run --rm initbucardoscript
 # Verifique se a base de dados com "bucardo" esta em execução
 
-$ docker-compose down && docker-compose --env-file .env up -d frontendserver bucardo && docker-compose logs -f
-# Verifique se a sincronizacao com "bucardo" esta em execução
+$ docker-compose --env-file .env up -d bucardo && docker-compose logs -f
+# Verifique se o serviço "bucardo" esta em execução
+
 ```
 
 ### 5. Verificação do estado do serviço bucardo
@@ -184,13 +183,13 @@ Dentro do contêiner, execute o seguinte comando:
 root@:/# bucardo -h db -U bucardo status
 ```
 Após a execução do comando, deverá obter o seguinte resultado:
-| Name | README | README | README | README | README | README |
+| Name | State | Last Good | Time | Last I/D | Last Bad | Time |
 | ---- | ------ | ------ | ------ | ------ | ------ | ------ |
 | idmed_sync | Good | 16:14:50 | 46m 53s | 9/9  | none |  |
 
 ou
 
-| Name | README | README | README | README | README | README |
+| Name | State | Last Good | Time | Last I/D | Last Bad | Time |
 | ---- | ------ | ------ | ------ | ------ | ------ | ------ |
 | idmed_sync | Bad | 16:14:50 | 46m 53s | 9/9  | none |  |
 
@@ -203,7 +202,8 @@ root@:/# tail -f /var/log/bucardo/log.bucardo
 Usando a linha de comando, execute o comando abaixo para a criação de uma subscricão para a base de dados:
 ```sh
 $ docker-compose --env-file .env run --rm  initlogicalreplicationscript
-# Verifique se a informação de subscrição foi criada
+# Verifique se a informação de subscrição  foi criada
+
 ```
 
 ```sh
