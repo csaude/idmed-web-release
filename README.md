@@ -38,7 +38,7 @@
 
 ## Instalação
 
-Primeiro instale o docker [Docker](https://docs.docker.com/get-started/.).  Garantir que a versão do Docker Compose seja maior que v1.25.0.
+Primeiro instale o docker [Docker](https://docs.docker.com/get-started/.). Garantir que a versão do Docker Compose seja maior que v1.25.0.
 Localize o arquivo .zip de instalação fornecidos no pacote desta release no [gitHub]() na pasta Code Package
 Copia o arquivo 'csaude-idmed-current_Instalation.zip' para o DIRECTORIO idmedSetup e execute os comandos
 
@@ -203,6 +203,7 @@ Usando a linha de comando, execute o comando abaixo para a criação de uma subs
 ```sh
 $ docker-compose --env-file .env run --rm  initlogicalreplicationscript
 # Verifique se a informação de subscrição  foi criada
+
 ```
 
 ```sh
