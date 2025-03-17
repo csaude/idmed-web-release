@@ -42,7 +42,7 @@
 ### Notas da Release
 - **iDMED - 1.6.0 Release Notes_Mar_2025**
 
-#### Guia de instalação:
+### Guia de instalação:
 - **iDMED_Guia_Instalação_1.6.0**
 
 ### Documentos de Requisitos iDMED_Web
