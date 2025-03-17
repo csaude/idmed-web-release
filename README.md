@@ -5,37 +5,53 @@
 ### Relatórios do Serviço de Saúde TARV
 
 #### Relatórios de Gestão de Farmácia
-- **Faltosos ao levantamento de ARVs para APSS** - *Ticket #3655*
+- **Lista de Possíveis Utentes Duplicados**
+       - **Alterações aplicadas em conformidade com a Ordem Executiva** - *14168*
+- **Lista de Utentes Registados a Partir do iDMED**
+       - **Alterações aplicadas em conformidade com a Ordem Executiva** - *14168*
 
-#### Relatórios de Monitoria e Avaliação
-- **Dispensas Não Sincronizadas para o OpenMRS** - *Ticket #3713*
+#### Dashboard
+- **Tabela de Total de Dispensas por Sexo no Serviço TARV**
+       - **Alterações aplicadas em conformidade com a Ordem Executiva** - *14168*
 
 ---
 
 ## Funcionalidades e Formulários
 
 ### Módulo de Gestão de Stock
-- **Distribuição de Stock** (*Novo*)
+#### Inventário de Medicamentos
+- **Remoção de lotes expirados**  - *Ticket #3731*
+- **Erro no formato da data após fechar o inventário**  - *Ticket #3947*
 
-### Módulo de Administração Geral
-- **Constrangimento no acesso aos sectores clínicos** - *Ticket #3777*
-- **Configuração de Sector Clínico** - *Ticket #3774*
-- **Update do `parent_clinic_id`** - *Ticket #3804*
-- **Atribuição automática de `Location UUID`** - *Ticket #3677* (*Novo*)
+### Módulo de Gestão de Utentes
+- **Gestão de Prescrições**
+       - **Alerta ao criar prescrições para utentes inactivos** - *Ticket #3656*
+- **Gestão de Dispensas**
+        - **Dispensa de Medicamentos para utentes inactivos no SESP** - *Ticket #3437*
+        - **Sincronização das dispensas dos utentes em trânsito.**
+- **Gestão de Utentes**
+       - **Registro de Utentes em trânsito** - *Ticket #3826*
+       - **Edição de dados demográficos do utente - Alteração de NIDs** - *Ticket #3048*
+       - **Sincronização de dados de utentes do SESP para o iDMED.**
+       - **Alterações aplicadas em conformidade com a Ordem Executiva** - *14168*
 
 ---
 
 ## Documentos
 
 ### Notas da Release
-- **iDMED - 1.5.0 Release Notes_Dec_2024**
+- **iDMED - 1.6.0 Release Notes_Mar_2025**
 
 ### Documentos de Requisitos iDMED_Web
-- **iDMED_STK_005_Distribuição**
+- **iDMED_PAT_001_Registo_Manutenção_Utentes**
+- **iDMED_PAT_003_Registo_Manutenção_Histórico_Clínico**
 - **iDMED_PAT_004_Registo_Manutenção_Prescrições**
-- **iDMED_REL_035_Dispensas_Não_Sincronizadas**
-- **iDMED_REL_015_Faltosos_Levantamento_ARVs_APSS**
-- **iDMED_Mobile_STK_FUNC_002_Distribuição_Stock**
+- **iDMED_PAT_005_Registo_Manutenção_Dispensa_Medicamentos**
+- **iDMED_PAT_007_Sincronização_Dados_Utentes**
+- **iDMED_REL_001_Dashboard**
+- **iDMED_REL_028_PossiveisUtentesDuplicados**
+- **iDMED_REL_034_Utentes_Registrados_iDMED**
+- **iDMED_STK_003_Manutenção_Inventario**
 
 ---
 
@@ -122,7 +138,7 @@ $ docker-compose down && docker-compose --env-file .env up -d frontendserver && 
 # Verifique se o iDMED esta em execução
 
 $ docker-compose --env-file .env up -d bucardo && docker-compose logs -f
-# Verifique se a sincronizacao com "bucardo" esta em execução
+# Verifique se a sincronização com "bucardo" está em execução
 ```
 ---
 
@@ -179,8 +195,7 @@ $ docker-compose --env-file .env run --rm bucardosyncdatascript
 # Verifique se o envio de dados para o servidor provincial executou com sucesso
 
 $ docker-compose --env-file .env up -d bucardo && docker-compose logs -f
-# Verifique se o serviço "bucardo" esta em execução
-
+# Verifique se o serviço "bucardo" está em execução
 ```
 
 ### 2. Verificação do Estado do Bucardo
