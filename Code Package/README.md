@@ -122,7 +122,7 @@ $ docker-compose down && docker-compose --env-file .env up -d frontendserver && 
 # Verifique se o iDMED esta em execução
 
 $ docker-compose --env-file .env up -d bucardo && docker-compose logs -f
-# Verifique se a sincronizacao com "bucardo" esta em execução
+# Verifique se a sincronização com "bucardo" está em execução
 ```
 ---
 
@@ -179,8 +179,7 @@ $ docker-compose --env-file .env run --rm bucardosyncdatascript
 # Verifique se o envio de dados para o servidor provincial executou com sucesso
 
 $ docker-compose --env-file .env up -d bucardo && docker-compose logs -f
-# Verifique se o serviço "bucardo" esta em execução
-
+# Verifique se o serviço "bucardo" está em execução
 ```
 
 ### 2. Verificação do Estado do Bucardo

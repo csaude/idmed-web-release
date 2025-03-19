@@ -1,0 +1,28 @@
+{
+  "databases":[
+    {
+      "id": 1,
+      "dbname": "idmed",
+      "host": "db",
+      "port": "5432",
+      "user": "bucardo",
+      "pass": "bucardo"
+    },
+    {
+      "id": 2,
+      "dbname": "idmed",
+      "host": "central.idmed.linode",
+      "port": "5432",
+      "user": "postgres",
+      "pass": "postgres"
+    }
+  ],
+  "syncs" : [
+    {
+      "sources": [1],
+      "targets": [2],
+      "tables": "start_stop_reason",
+      "onetimecopy": 1
+    }
+  ]
+}
