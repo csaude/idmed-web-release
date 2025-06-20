@@ -1,40 +1,51 @@
-# iDMED (v1.6.0)
+# iDMED (v1.7.0)
 
 ## Relatórios
 
 ### Relatórios do Serviço de Saúde TARV
 
 #### Relatórios de Gestão de Farmácia
-- **Lista de Possíveis Utentes Duplicados**
-       - **Alterações aplicadas em conformidade com a Ordem Executiva** - *14168*
-- **Lista de Utentes Registados a Partir do iDMED**
-       - **Alterações aplicadas em conformidade com a Ordem Executiva** - *14168*
-
-#### Dashboard
-- **Tabela de Total de Dispensas por Sexo no Serviço TARV**
-       - **Alterações aplicadas em conformidade com a Ordem Executiva** - *14168*
-
+- **Relatório de Dispensas não SIncronizadas para o OpenMRS**
+       - **Remoção do histórico das dispensas sincronizadas para o SESP** - *Ticket 3960*
+       - **Remoção de dispensas de pacientes em trânsito** - *Ticket 3713*
+- **Relatório de Histórico de Levantamentos**
+       - **Inclusão da coluna com a US de Proveniência do Paciente em Trânsito** - *Ticket 3826*
+- **Relatório MMIA**
+       - **Discrepâncias no MMIA** - *Ticket 3826*
 ---
 
 ## Funcionalidades e Formulários
 
-### Módulo de Gestão de Stock
-#### Inventário de Medicamentos
-- **Remoção de lotes expirados**  - *Ticket #3731*
-- **Erro no formato da data após fechar o inventário**  - *Ticket #3947*
-
 ### Módulo de Gestão de Utentes
-- **Gestão de Prescrições**
-       - **Alerta ao criar prescrições para utentes inactivos** - *Ticket #3656*
-- **Gestão de Dispensas**
-        - **Dispensa de Medicamentos para utentes inactivos no SESP** - *Ticket #3437*
-        - **Sincronização das dispensas dos utentes em trânsito.**
-- **Gestão de Utentes**
-       - **Registro de Utentes em trânsito** - *Ticket #3826*
-       - **Edição de dados demográficos do utente - Alteração de NIDs** - *Ticket #3048*
-       - **Sincronização de dados de utentes do SESP para o iDMED.**
-       - **Alterações aplicadas em conformidade com a Ordem Executiva** - *14168*
+#### Pesquisa e Visualização de Utente
+- **Visualização dos dados demográficos e clínicos do utente mediante scan de código de barras**  - *Novo*
+- **Gestão de Prescrições e Dispensas**
+       - **Remoção da validação do preenchimento da Linha terapêutica nas dispensas dos regimes de TPT ** - *Ticket #3990*
+        - **Prescrição TPT: Situação do paciente iDMED diferente do OpenMRS** - *Ticket #3967 e #3968*
+        - **iDMED - Remoção de prescrição do paciente** - *Ticket #3980*
+        - **Pedido para usar UUID do paciente para verificar estado no SESP antes da dispensa** - *Ticket #4040*
+        - **Carregamento de foto da prescrição**- *Novo*
+        - **Remoção da sincronização das dispensas dos utentes em trânsito, para o SESP na US de proveniência.**
+- **Módulo de Gestão de Grupos**
+       - **Erro na Dispensa de Medicamentos para Grupos** - *Ticket #4046*
+- **Módulo de Gestão de Stock**
+       - **Auditoria para inventários e Ajustes** - *Ticket #4048*
+- **Módulo de Administração**
+       - **Criação dos perfis de utilizadores segundo as funcionalidades necessárias.**- *Ticket #3948*
+       - **Inclusão dos medicamentos e regime pALD (ABC+3TC+DTG (3DFC DTG5mg))
+** - *Novo*
 
+- **Criação/Importação de utentes**
+       - **iDMED - Pacientes PREP são carregados com data de admissão errada
+** - *Ticket 3978*
+- **Gestão de prescrições e Dispensas**
+       - **iDMED - Regimes TPT nao tem medicamentos mapeados** - *Ticket 3979*
+       
+- **Registo de Inventário**
+       - **Problema na Visualização Completa dos Números de Lote no iDMED** - *Ticket #4045*
+       
+- **Registo de Inventário**
+       - **Problema na Visualização Completa dos Números de Lote no iDMED** - *Ticket #4045*
 ---
 
 ## Documentos
@@ -46,16 +57,13 @@
 - **iDMED_Guia_Instalação_1.6.0**
 
 ### Documentos de Requisitos iDMED_Web
+- **iDMED_ADM_003_Gestao_Perfis**
+- **iDMED_ADM_013_LogsRegistry**
 - **iDMED_PAT_001_Registo_Manutenção_Utentes**
-- **iDMED_PAT_003_Registo_Manutenção_Histórico_Clínico**
 - **iDMED_PAT_004_Registo_Manutenção_Prescrições**
 - **iDMED_PAT_005_Registo_Manutenção_Dispensa_Medicamentos**
-- **iDMED_PAT_007_Sincronização_Dados_Utentes**
-- **iDMED_REL_001_Dashboard**
-- **iDMED_REL_028_PossiveisUtentesDuplicados**
-- **iDMED_REL_034_Utentes_Registrados_iDMED**
-- **iDMED_STK_003_Manutenção_Inventario**
-
+- **iDMED_REL_005_HistoricoDeLevantamentos**
+- **iDMED_REL_003_Registo_Manutenção_Histórico_Clínico**
 ---
 
 
