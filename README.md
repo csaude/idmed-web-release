@@ -1,71 +1,51 @@
-# iDMED (v1.7.0)
+# iDMED (v1.8.0)
 
-## Relatórios do Serviço de Saúde TARV
+## Módulo de Gestão de Utentes
 
-### Relatórios de Gestão de Farmácia
- **Relatório de Dispensas não Sincronizadas para o OpenMRS**
- - **Remoção do histórico das dispensas sincronizadas para o SESP** - *Ticket 3960*
- - **Remoção de dispensas de pacientes em trânsito** - *Ticket 3713*
+### Relatório Serviço TARV
 
-**Relatório de Histórico de Levantamentos**
-- **Inclusão da coluna com a US de Proveniência do Paciente em Trânsito** - *Ticket 3826*
-
-**Relatório MMIA**
-- **Discrepâncias no MMIA** - *Ticket 3826*
+#### Relatório MMIA
+- **Discrepâncias no MMIA** - *Ticket 4132*
+  
 ---
 
 ## Funcionalidades e Formulários
 
 ### Módulo de Gestão de Utentes
-#### Pesquisa e Visualização de Utente
-- **Visualização dos dados demográficos e clínicos do utente mediante scan de código de barras**  - *Novo*
+#### Gestão de Utentes
+ - **Pesquisa e Visualização dos utentes em trânsito a partir do servidor provincial de iDMED** - *Novo*
+ - **Possibilidade de adicionar serviço de TPT na paragem única** - *Ticket 4149*
+### Módulo de Administração
+#### Gestão de Serviços de Segundo Plano
+- **Opção para activar/desactivar a sincronização de Dados da DD/DC**  - *Ticket #4051 - Novo*
+
+## Funcionalidades e Formulários
+
+### Módulo de Gestão de Utentes
+#### Gestão de Prescrições e Dispensas
+- **Problemas com FILA - Não visualização da última dispensa do utente**  - *Ticket #4131*
+- **Data de Fim no Histórico Clínico não actualizada é quando a prescrição é removida**  - *Ticket #4134*
+
+### Módulo de Administração
+#### Gestão de Utilizadores e Perfis
+- **Actualização de Sector Clínico do usuário, não considera o de-selecionado**  - *Ticket #4150*
+- **Problemas com atribuição de perfis de utilizadores**  - *Ticket #4111*
   
-- **Gestão de Prescrições e Dispensas**
-  - **Remoção da validação do preenchimento da Linha terapêutica nas dispensas dos regimes de TPT** - *Ticket #3990*
-  - **Prescrição TPT: Situação do paciente iDMED diferente do OpenMRS** - *Ticket #3967 e #3968*
-  - **iDMED - Remoção de prescrição do paciente** - *Ticket #3980*
-  - **Pedido para usar UUID do paciente para verificar estado no SESP antes da dispensa** - *Ticket #4040*
-  - **Carregamento de foto da prescrição**- *Novo*
-  - **Remoção da sincronização das dispensas dos utentes em trânsito, para o SESP na US de proveniência.**
-
-- **Módulo de Gestão de Grupos**
-  - **Erro na Dispensa de Medicamentos para Grupos** - *Ticket #4046*
-    
-- **Módulo de Gestão de Stock**
-  - **Auditoria para inventários e Ajustes** - *Ticket #4048*
-- **Módulo de Administração**
-  - **Criação dos perfis de utilizadores segundo as funcionalidades necessárias.**- *Ticket #3948*
-  - **Inclusão dos medicamentos e regime pALD (ABC+3TC+DTG (3DFC DTG5mg))** - *Novo*
-
-- **Criação/Importação de utentes**
-  - **iDMED - Pacientes PREP são carregados com data de admissão errada** - *Ticket 3978*
-- **Gestão de prescrições e Dispensas**
-  - **iDMED - Regimes TPT nao tem medicamentos mapeados** - *Ticket 3979*
-       
-- **Registo de Inventário**
-  - **Problema na Visualização Completa dos Números de Lote no iDMED** - *Ticket #4045*
-       
-- **Registo de Inventário**
-  - **Problema na Visualização Completa dos Números de Lote no iDMED** - *Ticket #4045*
 ---
 
 ## Documentos
 
 ### Notas da Release
-- **iDMED - 1.6.0 Release Notes_Mar_2025**
+- **iDMED - 1.8.0 Release Notes_September_2025**
 
 
 #### Guia de instalação:
-- **iDMED_Guia_Instalação_1.7.0**
+- **iDMED_Guia_Instalação_1.8.0**
 
 ### Documentos de Requisitos iDMED_Web
-- **iDMED_ADM_003_Gestao_Perfis**
-- **iDMED_ADM_013_LogsRegistry**
-- **iDMED_PAT_001_Registo_Manutenção_Utentes**
-- **iDMED_PAT_004_Registo_Manutenção_Prescrições**
-- **iDMED_PAT_005_Registo_Manutenção_Dispensa_Medicamentos**
-- **iDMED_REL_005_HistoricoDeLevantamentos**
-- **iDMED_REL_003_Registo_Manutenção_Histórico_Clínico**
+- **iDMED_ADM_014_Gestão_Serviços_Background_v1.0**
+- **iDMED_PAT_001_Registo_Manutenção_Utentes_v1.8**
+  
 ---
 
 
