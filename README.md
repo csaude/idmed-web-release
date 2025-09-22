@@ -5,7 +5,7 @@
 ### Relatório Serviço TARV
 
 #### Relatório MMIA
-- **Discrepâncias no MMIA** - *Ticket 3826*
+- **Discrepâncias no MMIA** - *Ticket 4132*
   
 ---
 
@@ -45,7 +45,6 @@
 ### Documentos de Requisitos iDMED_Web
 - **iDMED_ADM_014_Gestão_Serviços_Background_v1.0**
 - **iDMED_PAT_001_Registo_Manutenção_Utentes_v1.8**
-- **iDMED_REL_003_Registo_Manutenção_Histórico_Clínico**
   
 ---
 
