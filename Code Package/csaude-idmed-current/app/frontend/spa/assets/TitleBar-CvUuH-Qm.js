@@ -1,1 +1,0 @@
-import{a,aj as s,M as r,P as o,j as c,ay as n,S as i,a4 as l,a5 as _,a7 as d}from"./index-Bgswxf5k.js";const p={class:"text-center"},m={class:"q-my-md text-subtitle1 text-grey-14"},f={__name:"TitleBar",setup(u){const e=a("title");return(t,x)=>(r(),s("div",p,[o("div",m,[n(t.$slots,"default",{},()=>[l(_(d(e)),1)])]),c(i,{color:"grey-13",size:"1px"})]))}};export{f as _};
