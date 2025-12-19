@@ -1,50 +1,40 @@
-# iDMED (v1.8.0)
-
-## Módulo de Gestão de Utentes
-
-### Relatório Serviço TARV
-
-#### Relatório MMIA
-- **Discrepâncias no MMIA** - *Ticket 4132*
-  
----
+# iDMED (v1.9.0)
 
 ## Funcionalidades e Formulários
 
 ### Módulo de Gestão de Utentes
 #### Gestão de Utentes
- - **Pesquisa e Visualização dos utentes em trânsito a partir do servidor provincial de iDMED** - *Novo*
- - **Possibilidade de adicionar serviço de TPT na paragem única** - *Ticket 4149*
-### Módulo de Administração
-#### Gestão de Serviços de Segundo Plano
-- **Opção para activar/desactivar a sincronização de Dados da DD/DC**  - *Ticket #4051 - Novo*
+ - **Actualização dos Dados do Utente através do PDS** - *Ticket 4205*
+ - **Erro ao actualizar o UUID do utente** - *Ticket 4236*
+ 
+#### Gestão de prescrições e dispensas
+ - **Dispensas pediátricas de medicamentos não reflectem no SESP** - *Ticket 4167*
+ 
+### Módulo de Relatórios
+#### Relatório MMIA
+- **Revisão do indicador PrEP no MMIA**  - *Ticket #4243*
 
-## Funcionalidades e Formulários
+### Módulo de Stock
+#### Inventário de Medicamentos
+- **O sistema não aceita trocar a data de abertura do inventário**  - *Ticket #4268*
 
-### Módulo de Gestão de Utentes
-#### Gestão de Prescrições e Dispensas
-- **Problemas com FILA - Não visualização da última dispensa do utente**  - *Ticket #4131*
-- **Data de Fim no Histórico Clínico não actualizada é quando a prescrição é removida**  - *Ticket #4134*
-
-### Módulo de Administração
-#### Gestão de Utilizadores e Perfis
-- **Actualização de Sector Clínico do usuário, não considera o de-selecionado**  - *Ticket #4150*
-- **Problemas com atribuição de perfis de utilizadores**  - *Ticket #4111*
-  
+### Módulo de Migração de Dados
+#### Migração de dados do iDART para o iDMED
+- **Optimização do processo de migração de dados do iDART para o iDMED**  - *Ticket #4123*
+ 
 ---
 
 ## Documentos
 
 ### Notas da Release
-- **iDMED - 1.8.0 Release Notes_September_2025**
+- **DMED - 1.9.0 Release Notes_December_2025**
 
 
 #### Guia de instalação:
-- **iDMED_Guia_Instalação_1.8.0**
+- **iDMED_Guia_Instalação_1.9.0**
 
 ### Documentos de Requisitos iDMED_Web
-- **iDMED_ADM_014_Gestão_Serviços_Background_v1.0**
-- **iDMED_PAT_001_Registo_Manutenção_Utentes_v1.8**
+- **iiDMED_PAT_007_Sincronização_Dados_Utentes_v1.1**
   
 ---
 
@@ -161,7 +151,7 @@ $ docker-compose --env-file .env run --rm backupscript
 ### 3. Execução do Serviço iDMED
 ```sh
 $ docker-compose --env-file .env run --rm updatescript
-# Actualização da database idmed to para a versão 1.6.0
+# Actualização da database idmed to para a versão 1.9.0
 
 $ docker-compose down && docker-compose --env-file .env up -d backendserver && docker-compose logs -f
 # Verifique se a mensagem a seguir é ilustrada  "Grails application running at http://localhost:8884 in environment: production"

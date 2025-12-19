@@ -1,42 +1,41 @@
-# iDMED (v1.6.0)
-
-## Relatórios
-
-### Relatórios do Serviço de Saúde TARV
-
-#### Relatórios de Gestão de Farmácia
-- **Faltosos ao levantamento de ARVs para APSS** - *Ticket #3655*
-
-#### Relatórios de Monitoria e Avaliação
-- **Dispensas Não Sincronizadas para o OpenMRS** - *Ticket #3713*
-
----
+# iDMED (v1.9.0)
 
 ## Funcionalidades e Formulários
 
-### Módulo de Gestão de Stock
-- **Distribuição de Stock** (*Novo*)
+### Módulo de Gestão de Utentes
+#### Gestão de Utentes
+ - **Actualização dos Dados do Utente através do PDS** - *Ticket 4205*
+ - **Erro ao actualizar o UUID do utente** - *Ticket 4236*
+ 
+#### Gestão de prescrições e dispensas
+ - **Dispensas pediátricas de medicamentos não reflectem no SESP** - *Ticket 4167*
+ 
+### Módulo de Relatórios
+#### Relatório MMIA
+- **Revisão do indicador PrEP no MMIA**  - *Ticket #4243*
 
-### Módulo de Administração Geral
-- **Constrangimento no acesso aos sectores clínicos** - *Ticket #3777*
-- **Configuração de Sector Clínico** - *Ticket #3774*
-- **Update do `parent_clinic_id`** - *Ticket #3804*
-- **Atribuição automática de `Location UUID`** - *Ticket #3677* (*Novo*)
+### Módulo de Stock
+#### Inventário de Medicamentos
+- **O sistema não aceita trocar a data de abertura do inventário**  - *Ticket #4268*
 
+### Módulo de Migração de Dados
+#### Migração de dados do iDART para o iDMED
+- **Optimização do processo de migração de dados do iDART para o iDMED**  - *Ticket #4123*
+ 
 ---
 
 ## Documentos
 
 ### Notas da Release
-- **iDMED - 1.5.0 Release Notes_Dec_2024**
+- **DMED - 1.9.0 Release Notes_December_2025**
+
+
+#### Guia de instalação:
+- **iDMED_Guia_Instalação_1.9.0**
 
 ### Documentos de Requisitos iDMED_Web
-- **iDMED_STK_005_Distribuição**
-- **iDMED_PAT_004_Registo_Manutenção_Prescrições**
-- **iDMED_REL_035_Dispensas_Não_Sincronizadas**
-- **iDMED_REL_015_Faltosos_Levantamento_ARVs_APSS**
-- **iDMED_Mobile_STK_FUNC_002_Distribuição_Stock**
-
+- **iiDMED_PAT_007_Sincronização_Dados_Utentes_v1.1**
+  
 ---
 
 
@@ -152,7 +151,7 @@ $ docker-compose --env-file .env run --rm backupscript
 ### 3. Execução do Serviço iDMED
 ```sh
 $ docker-compose --env-file .env run --rm updatescript
-# Actualização da database idmed to para a versão 1.6.0
+# Actualização da database idmed to para a versão 1.9.0
 
 $ docker-compose down && docker-compose --env-file .env up -d backendserver && docker-compose logs -f
 # Verifique se a mensagem a seguir é ilustrada  "Grails application running at http://localhost:8884 in environment: production"
@@ -238,3 +237,4 @@ Se o erro persistir, contacte o helpDesk e envie a mensagem ilustrada *PID 25860
 
 ## Licença
 **CSAUDE**
+
