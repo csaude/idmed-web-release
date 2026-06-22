@@ -1,0 +1,1 @@
+import{A as e,O as t,v as n}from"./runtime-core.esm-bundler-Bhn3832z.js";import{D as r}from"./QBtn-CZJpQNzQ.js";function i(){let i=null,a=n();function o(){i!==null&&(clearTimeout(i),i=null)}return e(o),t(o),{removeTimeout:o,registerTimeout(e,t){o(i),r(a)===!1&&(i=setTimeout(()=>{i=null,e()},t))}}}export{i as t};

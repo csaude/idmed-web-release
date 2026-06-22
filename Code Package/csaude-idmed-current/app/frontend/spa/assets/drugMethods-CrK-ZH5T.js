@@ -1,0 +1,1 @@
+import{_n as e,gr as t}from"./systemUtils-Ko8iM8CR.js";var n=t(e);function r(){function e(e){return n.query().withAllRecursive(1).where(`id`,e).first()}return{getDrugFirstLevelById:e}}export{r as t};

@@ -1,0 +1,1 @@
+import{c as e,x as t}from"./runtime-core.esm-bundler-Bhn3832z.js";import{H as n,y as r}from"./QBtn-CZJpQNzQ.js";var i=n({name:`QToolbar`,props:{inset:Boolean},setup(n,{slots:i}){let a=e(()=>`q-toolbar row no-wrap items-center`+(n.inset===!0?` q-toolbar--inset`:``));return()=>t(`div`,{class:a.value,role:`toolbar`},r(i.default))}});export{i as t};
